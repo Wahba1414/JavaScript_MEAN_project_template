@@ -28,6 +28,15 @@ module.exports = function(grunt) {
       }
     },
 
+    //JSHint.
+    jshint: {
+      options: {
+        reporter: require('jshint-stylish') // use jshint-stylish to make our errors look and read good
+      },
+
+      build: ['Gruntfile.js', 'server/**/*.js', 'client/**/*.js']
+    }
+
   });
 
   // ===========================================================================
@@ -38,6 +47,8 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-develop');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+
 
 
   //register tasks.
